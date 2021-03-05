@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+    <div class="content" style="width: 40%">
+      <h2>Update Post</h2>
+      <form action="/posts/update/<%=id%>" method="POST">
+        <div>
+          <label for="">Title</label>
+          <input type="text" name="name" value="<%= data.title %>" />
+        </div>
+        <div>
+          <label for="">Body</label>
+          <textarea name="body"><%= data.body %></textarea>
+        </div>
+        <div>
+          <input class="loginbtn" type="submit" name="Update Now" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
