@@ -1,9 +1,9 @@
 1. SELECT COUNT(*) from artikel a, author b where a.author_id = b.id and b.nama = 'Reporter 1'
 2. SELECT body, LENGTH(body) - LENGTH(REPLACE(body, ' ', '')) + 1 as count_word FROM artikel
 3. SELECT b.nama, COUNT(a.author_id) AS total from artikel a, author b where a.author_id = b.id group by b.nama ORDER BY total DESC LIMIT 1;
-4. 
-5. 
-6. 
-7.
+4. SELECT b.meta_key, b.meta_value FROM artikel a, meta_artikel b WHERE a.id = b.post_id AND a.id = 1;
+5. SELECT * FROM artikel order by date(tanggal_terbit) DESC;
+6. SELECT COUNT(*) FROM artikel a, status b WHERE a.status = b.id AND b.status = 'publish';
+7. SELECT b.nama, a.judul, a.tanggal_terbit,(CASE WHEN ( c.meta_key = 'photographer') THEN c.meta_value ELSE '-' END) as photographer from artikel a, author b, meta_artikel c where a.author_id = b.id and a.id = c.post_id;
 8.
 9. 
